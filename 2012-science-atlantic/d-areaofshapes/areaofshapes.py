@@ -1,5 +1,5 @@
 '''
-Problem D
+Problem D: Area of Shapes
 '''
 
 def main():

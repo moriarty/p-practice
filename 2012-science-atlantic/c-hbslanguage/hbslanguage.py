@@ -1,5 +1,5 @@
 '''
-Problem C
+Problem C: HBS Language
 '''
 
 def main():
