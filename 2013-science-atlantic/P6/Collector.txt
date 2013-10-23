@@ -1,0 +1,49 @@
+Collector                                                   Time: 20s
+
+A collector of artifacts likes to get everything in pairs.
+After 20 years, he  decides to organize his collection, 
+thus,  he displays all the items in his backyard and gives to each item 
+from his collection a unique id string, that accurately describes the object.
+He packs all the items in identical boxes, and labels them with the 
+corresponding unique id string -- same id for each item of  a pair.
+After he finishes labeling, he starts to move the items back into his basement.
+When he has only one item left, a tornado takes it away.
+Can you help the collector to identify the missing object?
+
+Id strings consist of arbitrary  non-white characters 
+
+input:
+number of test cases
+and for each case 
+the number pairs of items
+then the id strings.
+
+output:
+ the id of the missing item for each case 
+ followed by a blank line
+
+
+Example:
+team.in 
+2
+3
+abc
+abc
+bbac
+bbac
+bbb
+4
+12345678abc
+12345678bca
+12345
+12345678bca
+12345678abc
+123456
+12345
+
+Output:
+bbb
+
+123456
+
+

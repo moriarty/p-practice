@@ -1,0 +1,115 @@
+				Sudoku++                           Time: 120s
+
+You may be familiar with the puzzle known as Sudoku.  In that puzzle,
+you are given a 9x9 grid; some of the grid spots are empty, and some
+of the spots contain one of the digits from 1 to 9.  The object of the
+puzzle is to fill in the empty spots of the grid with digits from 1
+to 9 such that:
+ - each row contains each of the nine digits;
+ - each column contains each of the nine digits; and
+ - upon dividing the 9x9 grid into nine 3x3 sub-grids, each sub-grid
+   also contains each of the nine digits.
+Since there are 9 entries in each row, column and sub-grid, it follows
+that at most one of the 9 digits can be found in each row, column or
+sub-grid.
+
+The initial condition of the Sudoku puzzle is that the grid locations
+already filled in determine exactly one solution.
+
+It turns out there is nothing "magic" about 9.  For example, you could
+have a 4x4 game (four rows, four columns, and four 2x2 sub-grids).
+Further, there is nothing "magic" about using digits; you could use
+(for example) any set of distinct symbols.  Here is a sample 4x4
+puzzle using the symbols "a", "b", "c" and "d":
+
+          ====================
+          || a | d ||   | b ||
+          ||---+---++---+---||
+          ||   |   || a |   ||
+          ====================
+          || b |   ||   |   ||
+          ||---+---++---+---||
+          ||   |   ||   | a ||
+          ====================
+
+Applying the rules of the game, the above puzzle can be uniquely
+completed as follows:
+
+          ====================
+          || a | d || c | b ||
+          ||---+---++---+---||
+          || c | b || a | d ||
+          ====================
+          || b | a || d | c ||
+          ||---+---++---+---||
+          || d | c || b | a ||
+          ====================
+
+Your task is to write a program which solves (generalized) Sudoku
+puzzles.  These puzzles will be 4x4, 9x9, 16x16 or 25x25.  The symbols
+used may be any collection of, respectively, four, nine, sixteen or
+twenty five printable ASCII characters.
+
+NOTE: in Sudoku++, each puzzle has either no solutions or one
+solution.
+
+
+INPUT
+
+The input consists of a line specifying the number M of
+puzzles to solve.  After that there are M puzzle descriptions, each of
+which is preceded by a blank line and has the form
+    - line 1: N, the number of rows (and columns) in the grid
+    - line 2: the N characters used as symbols in the puzzle
+    - lines 3 -- 3+N-1: a description of the puzzle rows
+      (empty spots are represented with the '.' character, which is
+      not one of the characters on line 2 of the description)
+
+For example, the 4x4 puzzle above would have the description
+4
+abcd
+ad.b
+..a.
+b...
+...a
+
+
+OUTPUT
+
+For the i-th input puzzle, output "Puzzle i:", followed by either the
+solution in the same format as the input (if the puzzle can be
+completed), or "No solution!" (if the puzzle can not be completed).
+There is a blank line printed between adjacent puzzle results.
+
+
+Sample input:
+2
+
+4
+abcd
+ad.b
+..a.
+b...
+...a
+
+9
+123456789
+691.825.7
+4..91.6.8
+..3..1..2
+9..2.....
+154...326
+.3.6.4.79
+.1.72.46.
+.6.4.3.81
+3.2.68597
+
+Sample output:
+Puzzle 1:
+adcb
+cbad
+badc
+dcba
+
+Puzzle 2:
+No solution!

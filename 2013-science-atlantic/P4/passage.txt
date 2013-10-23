@@ -1,0 +1,97 @@
+Problem: A Passage in the Maritimes                           Time: 120s
+
+There are many small water ways (passages) around the Maritimes.
+The shores are ragged and only boats of a certain size can get
+through.  One common problem is to determine the largest possible
+boat that can make it through a given passage.
+
+Write a program that reads in a simple map that depicts a passage and
+determines the diameter (we assume all boats are round) of the largest 
+boat that can safely navigate the passage.
+
+Input
+-----
+Your program will read from the keyboard (stdin) several lines of
+text.  The input consists of three parts: the size of the map and
+two polygonal chains denoting the banks of the passage.  Specifically,
+the first line contains a positive integer N, denoting the height
+and width of the map.  The remaining input lines each contain two
+integers, in the range 0 ... N, denoting the X and Y coordinates
+of vertices that comprise the polygonal chains.  The maximum value
+of N is 2^30 and there may be up to 2N vertices.
+
+Semantics
+---------
+The vertices encode two polygonal chains that represent the banks
+of the passage to be evaluated.  Each polygonal chain begins at the
+left edge of the map and ends at the right edge of the map.  Thus,
+the first vertex of each polygonal chain has an X-value of 0 and
+the last vertex of each polygonal chain has an X-value of N.   The
+input order of the vertices is the same as their order in the
+polygonal chains.  Except for the vertices that begin or end a
+polychain, all vertices are properly contained within the boundary
+of the map.  The polygonal chains do not intersect.
+
+Your program should compute the diameter D (rounded down to the
+nearest integer) of the largest possible circle (we approximate
+boats by circles) that can navigate the passage bounded by the two
+polygonal chains.  That is, the width of the narrowest part of the 
+passage is not less than D.
+
+Output
+------
+Your program must output to the console (stdout).  The output should
+be a single line, terminated by a new line, of the form
+
+Maximum size: D
+
+where D is an integer denoting the diameter of the circle described
+above.
+
+Example 1
+---------
+Input:                   Output:
+
+  100                    Maximum size: 100
+  0 0
+  100 0
+  0 100
+  100 100
+
+Example 2
+---------
+Input:                   Output:
+
+  100                    Maximum size: 50
+  0 0
+  50 50
+  100 0
+  0 100
+  100 100
+
+Example 3
+---------
+Input:                   Output:
+
+  100                    Maximum size: 20
+  0 0
+  50 40
+  100 0
+  0 100
+  50 60
+  100 100
+
+Example 4
+---------
+Input:                   Output:
+
+  100                    Maximum size: 12
+  0 0
+  40 50
+  100 0
+  0 100
+  60 50
+  100 100
+
+Your input file contains the number of test cases followed 
+by the corresponding number of inputs in the format described above. 

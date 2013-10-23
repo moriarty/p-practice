@@ -1,0 +1,67 @@
+
+PROBLEM: Efficient codes                                Time: 120s
+
+Let S be a set of strings. An S-message is a concatenation of one
+or more strings from S. For example, if S1 = {00,001,10}, then
+0000100 and 1000 are two S1-messages. On the other hand, 000110
+is not an S1-message. In practice the strings in S represent objects
+of interest (colours, actions, temperatures, etc), and an S-message 
+encodes a list of such objects.
+
+DEFINITION A set of strings is called an efficient code, when the
+following Condition is satisfied: 
+  if an S-message begins with the concatenation of two strings s, t 
+  from S, then there is no pair of strings u, v from S such that
+  the message also begins with the concatenation of u, v and u is 
+  different from s.
+
+EXAMPLE: The set S1 above is not an efficient code because the
+message 001000... starts with the concatenation of 00 and 10,
+and also with the concatenation of 001 and 00, and 00 is different
+from 001. On the other hand, the sets S2 = {00,001,110} and 
+S3 = {00,11} are efficient codes.
+In practice, the fact that S2 is an efficient code means that any
+arbitrarily long S2-message x can be parsed correctly by finding
+two S2-strings s and t in the beginning of x and returning s as 
+the next S2-string in x, and then continuing the same parsing 
+process on the S2-message that is equal to x with s removed.
+
+Your program must read the number of test cases then, for each test case
+read a positive integer N, and then N strings, 
+one per line. You can assume that each string is nonempty and 
+consists only of digits. If the set of the N strings is an efficient 
+code, then your program must output "The set IS an efficient code."
+Else, your program must output "The set is NOT an efficient code:"
+followed by two pairs of strings violating the Condition such that
+the first pair of strings is in one line and the second pair
+of strings is in the next line--see sample input/output below.
+
+Sample input 1:
+2
+3
+00
+001
+10
+3
+00
+001
+110
+Sample Output 1:
+The set is NOT an efficient code:
+00,10
+001,00
+
+
+The set IS an efficient code.
+
+Sample input 1:
+1
+2
+00
+11
+
+
+Sample output 1:
+The set IS an efficient code.
+
+

@@ -1,0 +1,70 @@
+ Oil Exploration                                                 Time :20s
+--------------------------
+
+There has been a recent and exciting news about significant reserves of oil found 
+off the coast of Newfoundland.  A fleet of exploration drillships are ready to 
+explore the area in a search for more precise estimates of these reserves.  
+Your task is to write a program to help them to do their job in a most 
+efficient manner.
+
+Each ship has a task list with 2-D coordinates of the points that need to be explored.
+The points generally belong to a square grid of 1km by 1km, so x and y coordinates 
+of each exploration point are integer values.  The ships have divided the area 
+to be covered, so each ship has a long rectangular strip of width of about 
+3km that needs to be covered.  This means that the y coordinaate of each 
+exploration point is one of the values 0, 1, 2, or 3.  The x coordinate however
+ can range from 0 to 10000.  A ship can explore up to 4 points at one position, 
+as long as they are not too far away.  More precisely, the points must be some 
+vertices of a unit square, and the ship is anchored in the center of the square. 
+ You can take a look at the figure where each circle covers points that can be 
+explored at one ship position.  After exploring points at one position, 
+the ship moves to the next position and so on.  We need to minimize the number of
+positions that a ship needs to take in order to complete her task.
+The figure shows two examples with five and seven exploration points,
+and we can see how a ship can explore the first task in two positions,
+and the second task with three positions.
+
+Input
+
+The input consists of a sequence of test cases.  Each test case starts
+with a positive integer n denoting the number of exploration points.
+This is followed by n lines containing n different points, and each
+line containing x and y coordinates of the points. (0<=x<=10000, and
+0<=y<=3)  At the end, a line containing number 0 marks the end of test
+cases.
+
+Output
+
+For each test case, you must produce one line of output containing the
+integer that is the minimal number of positions the ship must make to
+explore all the points.
+
+Sample Input 1
+
+5
+1 1
+2 0
+2 1
+2 2
+3 0
+0
+
+Sample Output 1
+
+2
+
+Sample Input 2
+
+7
+1 1
+2 0
+2 1
+2 2
+3 0
+3 3
+4 1
+0
+
+Sample Output 2
+
+3
